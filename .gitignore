@@ -1,0 +1,4 @@
+volumes/kafka/*
+volumes/mariadb/*
+volumes/zookeeper/*
+crankset/public/uploads/*

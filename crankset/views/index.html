@@ -1,0 +1,7 @@
+{{define "content"}}
+  <h1>Hello, {{.name}}</h1>
+  {{if .query}}
+  <p>You're looking for: {{.query}}</p>
+  <small>Unfortunetly search is not working ;)</small>
+  {{end}}
+{{end}}

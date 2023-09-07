@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-ujs@1.2.3/src/rails.min.js"></script>
+  <title>{{.title}}</title>
+</head>
+<body>
+  {{include "layouts/header"}}
+  <div class="container-fluid">
+    <div class="row flex-xl-nowrap ">
+      <div class="col-12 col-md-3 col-xl-2 bd-sidebar"></div>
+      <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+        {{template "content" .}}
+      </main>
+      <div class="d-none d-xl-block col-xl-2 bd-toc"></div>
+    </div>
+  </div>
+
+  <script src="/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

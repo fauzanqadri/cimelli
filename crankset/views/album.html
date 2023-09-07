@@ -1,0 +1,35 @@
+{{define "title"}}Album{{end}}
+{{define "content"}}
+  <h1>Hello, From Album Template</h1>
+  <form action="/photo" enctype="multipart/form-data" method="POST">
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Plase Input your image file</label>
+        <input type="file" class="form-control" id="formFile" name="photo">
+    </div>
+
+    <div class="col-auto">
+        <button class="btn btn-primary mb-3" type="submit">Upload!</button>
+    </div>
+  </form>
+  <hr>
+  <div class="row text-center text-lg-start">
+    {{range .photos.Photos}}
+    <div class="col-lg-3 col-md-4 col6">
+      <a href="/photos/{{.Id}}" class="d-block mb4 h-100">
+        <img src="{{.UrlPath}}" alt="{{.Name}}" class="img-fluid img-thumbnail">
+      </a>
+    </div>
+    {{end}}
+  </div>
+  <hr>
+  <nav aria-label="...">
+    <ul class="pagination pagination-sm">
+      {{range .photos.Pages}}
+      <li class="page-item"><a class="page-link" href="/photos?page={{.}}">{{.}}</a></li>
+      {{end}}
+    </ul>
+    <small>Photo Count: <b>{{.photos.Count}}</b></small>
+    <small>Total Page: <b>{{.photos.TotalPage}}</b></small>
+    <small>Current Page: <b>{{.photos.CurrentPage}}</b></small>
+  </nav>
+{{end}}
